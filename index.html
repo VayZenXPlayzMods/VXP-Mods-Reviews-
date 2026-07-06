@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Mods Portal</title>
+    <style>
+        /* Base Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121214;
+            color: #e1e1e6;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1a1a1e;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 3px solid #00adb5;
+        }
+
+        header h1 {
+            color: #00adb5;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: #a8a8b3;
+            margin-top: 5px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Category Filter Buttons */
+        .category-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background-color: #1a1a1e;
+            color: #a8a8b3;
+            border: 2px solid #2a2a30;
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background-color: #00adb5;
+            color: #ffffff;
+            border-color: #00adb5;
+        }
+
+        /* Mod Grid and Cards */
+        .mod-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .mod-card {
+            background-color: #1a1a1e;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hidden class for filtering */
+        .mod-card.hidden {
+            display: none;
+        }
+
+        .mod-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 173, 181, 0.2);
+        }
+
+        .mod-image {
+            width: 100%;
+            height: 200px;
+            background-color: #2a2a30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #71717a;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .mod-info {
+            padding: 20px;
+        }
+
+        .mod-category-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            background-color: #2a2a30;
+            color: #00adb5;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .mod-title {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .mod-description {
+            color: #a8a8b3;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-download {
+            display: block;
+            text-align: center;
+            background-color: #00adb5;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-download:hover {
+            background-color: #008c95;
+        }
+
+        footer {
+            background-color: #1a1a1e;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            color: #71717a;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://i.ibb.co/0pGZR9f8/file-000000009e7c7209bf5992421663d341.png" class="site-logo" alt="VayZenXPlayz Mods Logo">
+      
+        <h1>VXP Mods Reviews</h1>
+        <p>Explore and download the best free custom vehicles, liveries, and maps to level up your game</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="category-menu">
+            <button class="category-btn active" onclick="filterMods('all')">All Mods</button>
+            <button class="category-btn" onclick="filterMods('bus')">Bus Mods</button>
+            <button class="category-btn" onclick="filterMods('map')">Map Mods</button>
+            <button class="category-btn" onclick="filterMods('car')">Car Mods</button>
+        </div>
+         <div class="search-container">
+  <input type="text" id="search-bar" placeholder="Search mods by name...">
+</div>
+        <div class="mod-grid" id="mod-container">
+            
+            <div class="mod-card" data-category="bus">
+               <span class="badge NEW">Trending</span>
+              
+                 <img src="https://i.ibb.co/v6GmQCKn/file-00000000eaf8720b8929fac888474065-2.jpg" " class="mod-image" alt="Bus Mod">
+                <div class="mod-info">
+                    <span class="mod-category-badge">By @bdbusloverml</span>
+                                                   
+                    <h3 class="mod-title">SCANIA K410 Multi-axle Bus Mod</h3>
+                    <p class="mod-description">The SCANIA K410 is a premium, heavy-duty 6x2 coach mod featuring excellent stability and realistic highway physics. Its exterior looks incredibly sharp, supporting high-quality local liveries with realistic animations for the doors and luggage compartments. The interior boasts a detailed dashboard and an immersive first-person cabin view. While its massive size makes maneuvering through tight city streets or narrow custom maps a bit of a challenge, its deep engine audio and steady high-speed handling make it one of the absolute best luxury cruiser mods available.</p>
+                    <a href="https://drive.google.com/file/d/1pbOitvsfFuWgKWpZxBQZTKI94_hWUbLx/view?usp=drivesdk" class="btn-download" target="_blank">Download Now</a>
+                </div>
+            </div>
+           
+            <div class="mod-card" data-category="bus">
+                                                              <span class="badge NEW">Trending</span>
+                <img src="https://i.ibb.co/kgRkBCrT/file-000000001004720b9c70dee2f47aca65-2.jpg" class="mod-image" alt="Bus Mod">
+
+                <div class="mod-info">
+                    <span class="mod-category-badge">By @bdbusloverml</span></s>
+                    <h3 class="mod-title">ZEDONE BS6 New Luxury Bus Mod</h3>
+                    <p class="mod-description">This Luxury White Bus Mod has a clean and premium design that looks amazing in BUSSID. The detailed interior and modern front styling make the bus feel realistic. Driving is smooth, and the mod is well optimized for gameplay. The overall build quality is impressive, with stylish accessories and a realistic look. If you enjoy luxury coach mods, this one is definitely worth downloading and trying.</p>
+                    <a href="https://sharemods.com/bky9c3a5jv53/ZEDONE_BS6_1.bussidmod.zip.html" class="btn-download" target="_blank">Download Mod</a>
+                </div>
+            </div>
+                                                                    <div class="mod-card" data-category="map">
+                                                              <span class="badge NEW">New</span>
+                <img src="https://i.ibb.co/Lz98vNdF/file-000000003fe871fa9a6f7c89d7b6aa37.png" class="mod-image" alt="Map Mod">
+
+                <div class="mod-info">
+                    <span class="mod-category-badge">By @plazzugaming</span></s>
+                    <h3 class="mod-title">NEPALI Manang HILL Road Map Mod</h3>
+                    <p class="mod-description">The Nepali Hills Map Mod delivers one of the most thrilling driving experiences in BUSSID. Inspired by Nepal's mountainous terrain, the map features narrow roads, sharp hairpin bends, steep climbs, deep valleys, and stunning hill scenery. The realistic environment and challenging routes make every journey exciting, especially for players who enjoy testing their driving skills. With smooth performance and detailed landscapes, this map is a must-try for adventure lovers..</p>
+                    <a href="https://just2earn.com/AM3o6Uxa" class="btn-download" target="_blank">Download Mod</a>
+                </div>
+            </div>
+                                                
+                  <div class="social-icons-container">
+    <a href="https://youtube.com/@vayzenxplayz?si=rS9SZSNFIG3tA7WX" class="social-icon yt" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+
+    <a href="https://t.me/VayZenXPlayz" class="social-icon tg" aria-label="Telegram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 3.79z"/></svg>
+    </a>
+
+    <a href="https://www.instagram.com/vayzenxplayz?igsh=MXZ5bTR0ajhmenRhag==" class="social-icon ig" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+    </a>
+
+    <a href="mailto: support.vxpmodsreviews@gmail.com" class="social-icon mail" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" /><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" /></svg>
+    </a>
+</div>
+                                                                                              
+</div>
+
+
+</div>
+    <footer>
+         <p>© 2026 VXP Mods Reviews. All assets belong to their respective creators.</p>
+    <p>
+        <a href="https://cdpn.io/pen/debug/ogBpzxB?authentication_hash=nqkwvdyxJoKA" target="_blank">Privacy Policy</a> | 
+        <a href="https://cdpn.io/pen/debug/VYPrJWv?authentication_hash=mVkbGWLjqLwM" target="_blank">Terms & Conditions</a>
+    </p>
+    </footer>
+
+    <script>
+        function filterMods(category) {
+            // Manage Active Button States
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter Card Display
+            const cards = document.querySelectorAll('.mod-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

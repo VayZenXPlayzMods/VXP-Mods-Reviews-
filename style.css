@@ -1,0 +1,164 @@
+
+
+.site-logo {
+    height: 120px; /* Controls how big your logo looks */
+    width: auto;
+    display: block;
+    margin: 0 auto 15px auto; /* Centers the logo perfectly */
+    object-fit: contain;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.8rem; }
+    header p { font-size: 0.9rem; }
+  header p {
+    color: #a8a8b3;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.site-logo {
+    height: 120px; /* Controls how big your logo looks */
+    width: auto;
+    display: block;
+    margin: 0 auto 15px auto; /* Centers the logo perfectly */
+       object-fit: contain;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.8rem; }
+    header p { font-size: 0.9rem; }
+    .site-logo { height: 80px; }
+}  .site-logo { height: 80px; }
+}
+    
+/* General badge style */
+.badge {
+  display: inline-block;
+  padding: 5px 9px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Color for Trending badge */
+.badge.trending {
+  background-color: #ff4757;
+  color: white;
+}
+
+/* Color for Updated badge */
+.badge.updated {
+  background-color: #2ed573;
+  color: white;
+}
+
+/* Optional: Color for a New badge if you want to add one later */
+.badge.new {
+  background-color: #1e90ff;
+  color: white;
+}
+
+.search-container {
+  margin: 20px auto;
+  text-align: center;
+}
+
+#search-bar {
+  width: 85%;
+  max-width: 400px;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid #444;
+  background-color: #1a1a1e;
+  color: white;
+  outline: none;
+}
+
+.task-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 8px 5px;
+    background: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.task-btn:hover {
+    background: #e64a19;
+}
+
+   transition: 0.3s;
+}
+
+.task-btn:hover {
+    background: #e64a19;
+}
+
+.task-btn.done {
+    background: #28a745;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.mod-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: #fff;
+}
+
+.download-btn {
+  background-color: #28a745; /* Green button */
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.social-icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    color: white;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* Platform specific branding colors */
+.yt { background-color: #FF0000; }   /* YouTube Red */
+.tg { background-color: #0088cc; }   /* Telegram Blue */
+.ig { background-color: #E1306C; }   /* Instagram Pink */
+.mail { background-color: #007BFF; } /* Email Blue */
