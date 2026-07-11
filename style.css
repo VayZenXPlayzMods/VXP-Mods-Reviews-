@@ -175,10 +175,5 @@
 .ig { background-color: #E1306C; }   /* Instagram Pink */
 .mail { background-color: #007BFF; }  /* Email Blue */
 
-    .social-icon img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-    }
-    
+
     
