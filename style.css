@@ -29,7 +29,6 @@
     header h1 { font-size: 1.8rem; }
     header p { font-size: 0.9rem; }
     .site-logo { height: 80px; }
-}  .site-logo { height: 80px; }
 }
     
 /* General badge style */
@@ -87,13 +86,6 @@
     border-radius: 8px;
     font-weight: bold;
     transition: 0.3s;
-}
-
-.task-btn:hover {
-    background: #e64a19;
-}
-
-   transition: 0.3s;
 }
 
 .task-btn:hover {
@@ -159,4 +151,4 @@
 .yt { background-color: #FF0000; }   /* YouTube Red */
 .tg { background-color: #0088cc; }   /* Telegram Blue */
 .ig { background-color: #E1306C; }   /* Instagram Pink */
-.mail { background-color: #007BFF; } /* Email Blue */
+.mail { background-color: #007BFF; }  /* Email Blue */
