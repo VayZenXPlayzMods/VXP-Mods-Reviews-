@@ -1,3 +1,25 @@
+<style>
+    /* 1. Base Dark Background and Font Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        background-color: #121214;
+        color: #e1e1e6;
+        line-height: 1.6;
+    }
+
+    header {
+        background-color: #1a1a1e;
+        padding: 30px 20px;
+        text-align: center;
+        border-bottom: 3px solid #00adb5;
+    }
+
 .site-logo {
     height: 120px; /* Controls how big your logo looks */
     width: auto;
